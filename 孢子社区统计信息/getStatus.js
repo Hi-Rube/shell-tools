@@ -11,16 +11,17 @@ function getPercent(i, all){
 }
 
 var item = [
-	'院校', '花嫁',
-	'街舞', '技术',
-	'情感', '家居',
-	'八卦', '汽车',
-	'娱乐', '理财', 
-	'教育', '招聘',
-	'运动', '地区',
-	'美食', '其他',
-	'生活', '萌宠',
-	'游戏', '亲子'
+	'校园', '亲子',
+	'八卦', '杂谈',
+	'行者', '娱乐',
+	'dancer', '摄影',
+	'逗比', '1024', 
+	'运动', '碎碎念',
+	'吃货', '文青',
+	'游戏', '剁手党',
+	'虐狗', '萌宠',
+	'少女', '其他',
+	'科普', '纯爱'
 ];
 
 var partyList = [];
@@ -31,7 +32,7 @@ for (var i = 0; i < item.length; i++){
 	 
 	console.log('( ' + getPercent(i + 1, itemCount) + '% ) ' + 'Begining to get ' + item[i] + '\'s data');
 	
-	var group = http.get('http://i.baoz.cn/rest/object/get.群组管理.club_' + item[i]);
+	var group = http.get('http://i.baoz.cn/rest/object/get.群组管理.club_~' + item[i]);
 
 	var party = group.body.readAll().toString();
 	var party = JSON.parse(party.substring(7, party.length - 2));
